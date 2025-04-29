@@ -6,7 +6,7 @@
 /*   By: cbopp <cbopp@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 12:18:59 by cbopp             #+#    #+#             */
-/*   Updated: 2025/04/15 12:46:01 by cbopp            ###   ########.fr       */
+/*   Updated: 2025/04/29 17:56:14 by cbopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <iomanip>
 #include <ctime>
 
-int ACcount::_nbAcocunts = 0;
+int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
@@ -26,7 +26,7 @@ void Account::_displayTimestamp(void) {
 	std::tm* ltm = std::localtime(&result);
 
 	std::cout	<< "["
-				<< 1900 + ltm->t_year
+				<< 1900 + ltm->tm_year
 				<< std::setw(2) << std::setfill('0') << 1 + ltm->tm_mon
 				<< std::setw(2) << std::setfill('0') << ltm->tm_mday
 				<< "_"
@@ -59,15 +59,15 @@ Account::~Account(void) {
 
 int Account::getNbAccounts(void) { return( _nbAccounts); }
 int Account::getTotalAmount(void) { return (_totalAmount); }
-int Account::getTotalNbDeposits(void) { return (_totalNbDeposits); }
-int Account::getTotalNbWithdrawals(void) { return (_totalNbWithdrawals); }
+int Account::getNbDeposits(void) { return (_totalNbDeposits); }
+int Account::getNbWithdrawals(void) { return (_totalNbWithdrawals); }
 
 void Account::displayAccountsInfos(void) {
 	_displayTimestamp();
 	std::cout	<< "accounts:" << getNbAccounts() << ";"
 				<< "total:" << getTotalAmount() << ";"
-				<< "deposits:" << getTotalNbDeposits() << ";"
-				<< "withdrawals:" << getTotalNbWithdrawals() << std::endl;
+				<< "deposits:" << getNbDeposits() << ";"
+				<< "withdrawals:" << getNbWithdrawals() << std::endl;
 }
 
 void Account::makeDeposit(int deposit) {
@@ -76,7 +76,7 @@ void Account::makeDeposit(int deposit) {
 				<< "p_amount:" << this->_amount << ";";
 	
 	if (deposit < 0) {
-		std::cout < "deposit:refused" << std::end;
+		std::cout << "deposit:refused" << std::endl;
 		return ;
 	}
 
@@ -92,7 +92,7 @@ void Account::makeDeposit(int deposit) {
 
 bool Account::makeWithdrawal(int withdrawal) {
 	_displayTimestamp();
-	std::cout	<< "index:" << this->_accountindex << ";"
+	std::cout	<< "index:" << this->_accountIndex << ";"
 				<< "p_amount:" << this->_amount << ";";
 
 	if (withdrawal < 0 || this->_amount - withdrawal < 0) {
@@ -100,7 +100,7 @@ bool Account::makeWithdrawal(int withdrawal) {
 		return (false);
 	}
 
-	tihs->_amount -= withdrawal;
+	this->_amount -= withdrawal;
 	this->_nbWithdrawals++;
 	_totalAmount -= withdrawal;
 	_totalNbWithdrawals++;
