@@ -6,13 +6,13 @@
 /*   By: cbopp <cbopp@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:23:32 by cbopp             #+#    #+#             */
-/*   Updated: 2025/05/07 15:30:16 by cbopp            ###   ########.fr       */
+/*   Updated: 2025/05/07 21:15:35 by cbopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(void) : Animal("Dog") {
+Cat::Cat(void) : Animal("Cat") {
 	std::cout << "😺 Default cat constructor called" << std::endl;
 }
 

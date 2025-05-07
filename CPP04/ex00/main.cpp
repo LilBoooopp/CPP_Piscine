@@ -6,7 +6,7 @@
 /*   By: cbopp <cbopp@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 17:03:52 by cbopp             #+#    #+#             */
-/*   Updated: 2025/05/07 17:03:54 by cbopp            ###   ########.fr       */
+/*   Updated: 2025/05/07 21:16:08 by cbopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int main() {
     const Animal* j = new Dog();
     const Animal* i = new Cat();
 
-    std::cout << j->getType() << " " << std::endl; // [cite: 54]
-    std::cout << i->getType() << " " << std::endl; // [cite: 54]
-    i->makeSound(); // will output the cat sound! [cite: 54]
+    std::cout << j->getType() << " " << std::endl;
+    std::cout << i->getType() << " " << std::endl;
+    i->makeSound(); // will output the cat sound!
     j->makeSound(); // will output the dog sound
     meta->makeSound();
 
@@ -70,7 +70,7 @@ int main() {
     cat2.makeSound();
     cat3.makeSound();
 
-    // Array of Animals (preparation for ex01)
+    // Array of Animals
     std::cout << "\nTesting array of Animals (polymorphic behavior in loop):" << std::endl;
     Animal* animals[4];
     animals[0] = new Dog();
