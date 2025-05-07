@@ -3,7 +3,7 @@ FLAGS = -Werror -Wextra -Wall -std=c++98
 
 NAME = polymorphism
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRCS = Animal.cpp Cat.cpp Dog.cpp main.cpp WrongAnimal.cpp WrongCat.cpp
 
 all: $(NAME)
 

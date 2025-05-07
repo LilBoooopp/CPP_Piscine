@@ -6,7 +6,7 @@
 /*   By: cbopp <cbopp@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:21:59 by cbopp             #+#    #+#             */
-/*   Updated: 2025/05/07 15:23:25 by cbopp            ###   ########.fr       */
+/*   Updated: 2025/05/07 17:02:58 by cbopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Cat : public Animal {
 		Cat &operator=(const Cat &other);
 		~Cat(void);
 
-		void	makeSound() const override;
+		void	makeSound() const;
 };
 
 #endif
