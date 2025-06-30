@@ -6,7 +6,7 @@
 /*   By: cbopp <cbopp@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 15:52:41 by cbopp             #+#    #+#             */
-/*   Updated: 2025/05/04 16:18:05 by cbopp            ###   ########.fr       */
+/*   Updated: 2025/06/30 16:40:09 by cbopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Fixed::Fixed(const Fixed &other) {
 Fixed::Fixed(const int num) {
 	std::cout << "Int constructor called" << std::endl;
 	this->_fixedPointValue = num << _fractionalBits;
+	std::cout << num << " means fixedpointvalue " << this->_fixedPointValue << std::endl;
 }
 
 Fixed::Fixed(const float fnum) {
