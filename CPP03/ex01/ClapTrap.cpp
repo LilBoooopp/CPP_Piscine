@@ -6,14 +6,14 @@
 /*   By: cbopp <cbopp@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 16:48:30 by cbopp             #+#    #+#             */
-/*   Updated: 2025/05/05 18:54:49 by cbopp            ###   ########.fr       */
+/*   Updated: 2025/06/30 23:16:25 by cbopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(const std::string& newName) : name(newName), health(10), energy(10), attackDamage(0) {
-	std::cout << "Clap Trap " << name << " constructor called" << std::endl;
+	std::cout << "ClapTrap " << name << " constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)

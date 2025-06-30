@@ -6,7 +6,7 @@
 /*   By: cbopp <cbopp@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 18:43:42 by cbopp             #+#    #+#             */
-/*   Updated: 2025/05/05 18:54:14 by cbopp            ###   ########.fr       */
+/*   Updated: 2025/06/30 23:14:28 by cbopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ ScavTrap::~ScavTrap(void) {
 }
 
 void	ScavTrap::guardGate(void) {
-	std::cout << "ScavTrap " << name << " is now in Gate keeper mode." << std::endl;
+	std::cout << "ScavTrap " << name << " is now in gate keeper mode." << std::endl;
 }
 
 void	ScavTrap::attack(const std::string& target) {

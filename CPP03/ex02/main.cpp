@@ -6,7 +6,7 @@
 /*   By: cbopp <cbopp@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 18:21:20 by cbopp             #+#    #+#             */
-/*   Updated: 2025/05/05 19:02:28 by cbopp            ###   ########.fr       */
+/*   Updated: 2025/06/30 23:15:34 by cbopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include "FragTrap.hpp"
 
 int main() {
-	// ScavTrap st("SC4V-TP");
-	// st.attack("enemy");
-	// st.takeDamage(20);
-	// st.beRepaired(10);
-	// st.guardGate();
+	ScavTrap st("SC4V-TP");
+	st.attack("enemy");
+	st.takeDamage(20);
+	st.beRepaired(10);
+	st.guardGate();
 	
 	FragTrap ft("FR4G-TP");
     ft.attack("enemy");
