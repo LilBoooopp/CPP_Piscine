@@ -6,7 +6,7 @@
 /*   By: cbopp <cbopp@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 02:39:42 by cbopp             #+#    #+#             */
-/*   Updated: 2025/04/17 02:51:44 by cbopp            ###   ########.fr       */
+/*   Updated: 2025/06/30 14:44:35 by cbopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void Harl::complain(std::string level) {
 
 	for (int i = 0; i < 4; ++i) {
 		if (levels[i] == level) {
-			(this->*(functions[i]))();
+			(this->*functions[i])();
 			return ;
 		}
 	}

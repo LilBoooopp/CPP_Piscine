@@ -6,7 +6,7 @@
 /*   By: cbopp <cbopp@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 02:39:42 by cbopp             #+#    #+#             */
-/*   Updated: 2025/04/17 03:21:03 by cbopp            ###   ########.fr       */
+/*   Updated: 2025/06/30 14:50:27 by cbopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void Harl::info(void) {
 
 void Harl::warning(void) {
 	std::cout	<< "[WARNING]" << std::endl
-				<< "I think I deserve to have some extra bacon for free. "
+				<< "I think I deserve to have some extra bacon for free. " << std::endl
 				<< "I’ve been coming for years, "
 				<< "whereas you started working here just last month." << std::endl;
 }
@@ -63,12 +63,15 @@ void Harl::complain(std::string level) {
 		case (0):
 			(this->*(functions[0]))();
 			std::cout << std::endl;
+			// fall through
 		case (1):
 			(this->*(functions[1]))();
 			std::cout << std::endl;
+			// fall through
 		case (2):
 			(this->*(functions[2]))();
 			std::cout << std::endl;
+			// fall through
 		case (3):
 			(this->*(functions[3]))();
 			std::cout << std::endl;

@@ -6,7 +6,7 @@
 /*   By: cbopp <cbopp@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 13:33:16 by cbopp             #+#    #+#             */
-/*   Updated: 2025/04/15 13:49:43 by cbopp            ###   ########.fr       */
+/*   Updated: 2025/06/30 14:24:42 by cbopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,7 @@ int	main(int argc, char **argv) {
 	}
 
 	std::cout << "\n--- Destroying Horde ---" << std::endl;
-	for (int i = 0; i < N; i++) {
-		horde[i].~Zombie();
-	}
-	delete[] reinterpret_cast<char*>(horde);
+	delete[] horde;
 
 	std::cout << "\n---End of main ---" << std::endl;
 	return (0);
