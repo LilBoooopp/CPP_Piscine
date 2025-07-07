@@ -6,7 +6,7 @@
 /*   By: cbopp <cbopp@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 17:03:52 by cbopp             #+#    #+#             */
-/*   Updated: 2025/05/07 21:38:54 by cbopp            ###   ########.fr       */
+/*   Updated: 2025/07/03 19:26:17 by cbopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@
 int	main() {
 	std::cout << "--- EXERCISE 01: TESTING DEEP COPY AND BRAIN ---" << std::endl;
 
-	// Provided main [cite: 65]
+	// Provided main
 	const Animal* j_animal = new Dog(); // j_animal is a more descriptive name
 	const Animal* i_animal = new Cat(); // i_animal is a more descriptive name
 
 	std::cout << "\nDeleting j_animal (Dog) and i_animal (Cat):" << std::endl;
-	delete j_animal; // Should call Dog destructor, which deletes its Brain [cite: 66]
-	delete i_animal; // Should call Cat destructor, which deletes its Brain [cite: 66]
+	delete j_animal; // Should call Dog destructor, which deletes its Brain
+	delete i_animal; // Should call Cat destructor, which deletes its Brain
 
 	std::cout << "\n--- TESTING ARRAY OF ANIMALS ---" << std::endl;
-	const int num_animals = 4; // As per "Half of it will be Dog objects and the other half will be Cat objects" [cite: 60]
+	const int num_animals = 4; // As per "Half of it will be Dog objects and the other half will be Cat objects"
 	Animal* animals[num_animals];
 
 	std::cout << "\nCreating Dogs and Cats for the array:" << std::endl;
@@ -54,7 +54,7 @@ int	main() {
 
 	std::cout << "\nDeleting animals from the array:" << std::endl;
 	for (int k = 0; k < num_animals; ++k) {
-		delete animals[k]; // Virtual destructor in Animal is crucial here [cite: 61, 62]
+		delete animals[k]; // Virtual destructor in Animal is crucial here
 	}
 
 	std::cout << "\n--- TESTING DEEP COPY ---" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: cbopp <cbopp@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 17:03:52 by cbopp             #+#    #+#             */
-/*   Updated: 2025/05/07 21:16:08 by cbopp            ###   ########.fr       */
+/*   Updated: 2025/07/03 19:21:05 by cbopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <iostream>
 
 int main() {
-    // Provided tests for correct polymorphism [cite: 53]
+    // Provided tests for correct polymorphism
     std::cout << "--- TESTING POLYMORPHISM ---" << std::endl;
     const Animal* meta = new Animal();
     const Animal* j = new Dog();
@@ -39,7 +39,7 @@ int main() {
     const WrongAnimal* wrongI = new WrongCat(); // Pointer to base, object of derived
 
     std::cout << wrongI->getType() << " " << std::endl;
-    wrongI->makeSound(); // Will output WrongAnimal sound because makeSound is not virtual [cite: 54]
+    wrongI->makeSound(); // Will output WrongAnimal sound because makeSound is not virtual
     wrongMeta->makeSound();
 
     // To explicitly call WrongCat's sound (not polymorphic)
