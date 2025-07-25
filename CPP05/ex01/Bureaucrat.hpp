@@ -6,7 +6,7 @@
 /*   By: cbopp <cbopp@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 00:52:25 by cbopp             #+#    #+#             */
-/*   Updated: 2025/07/08 10:55:26 by cbopp            ###   ########.fr       */
+/*   Updated: 2025/07/25 09:51:32 by cbopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
-#include <string>
-#include <stdexcept>
+#include "Form.hpp"
 
 class Bureaucrat {
 	private:
@@ -45,6 +44,8 @@ class Bureaucrat {
 
 		void	increment();
 		void	decrement();
+
+		void	signForm(Form& f) const;
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);

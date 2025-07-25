@@ -6,11 +6,12 @@
 /*   By: cbopp <cbopp@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 00:52:21 by cbopp             #+#    #+#             */
-/*   Updated: 2025/07/08 16:57:11 by cbopp            ###   ########.fr       */
+/*   Updated: 2025/07/08 11:11:41 by cbopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name), _grade(grade) {
 	//std::cout << "Bureaucrat default constructor called." << std::endl;
@@ -19,7 +20,7 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name), _grade
 }
 
 
-Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(other._grade) {
+Bureaucrat::Bureaucrat(const Bureaucrat &other) {
 	//std::cout << "Bureaucrat copy constructor called." << std::endl;
 	*this = other;
 }
@@ -49,6 +50,17 @@ void	Bureaucrat::increment() {
 void	Bureaucrat::decrement() {
 	if (_grade + 1 > 150) throw GradeTooLowException();
 	++_grade;
+}
+
+void	Bureaucrat::signForm(Form& f) const {
+	try {
+		f.beSigned(*this);
+		std::cout << _name << " signed " << f.getName() << "\n";
+	} catch (std::exception& e) {
+		std::cout	<< _name
+					<< " couldn't sign " << f.getName()
+					<< "because " << e.what() << "\n";
+	}
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b) {
