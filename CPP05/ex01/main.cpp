@@ -6,7 +6,7 @@
 /*   By: cbopp <cbopp@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 15:57:04 by cbopp             #+#    #+#             */
-/*   Updated: 2025/07/08 15:59:36 by cbopp            ###   ########.fr       */
+/*   Updated: 2025/07/25 10:31:06 by cbopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,23 @@
 #include "Form.hpp"
 
 int	main() {
-	try {
-		Bureaucrat bob("Bob", 50);
-		Form f("Top Secret", 30, 10);
+	Bureaucrat alice("Alice", 50);
+	Form tax("Taxform", 45, 30);
 
-		std::cout << bob << "\n" << f << "\n\n";
-		bob.signForm(f);
-		std::cout << f << "\n";
+	std::cout << alice << std::endl;
+	std::cout << tax << std::endl;
+
+	alice.signForm(tax);
+	std::cout << tax << std::endl;
+
+	Bureaucrat bob("Bob", 100);
+	bob.signForm(tax);
+
+	try {
+		Form bad("Bad", 0, 10);
+	} catch (std::exception& e) {
+		std::cerr << "Invalid form: " << e.what() << std::endl;
 	}
-	catch (std::exception& e) {
-		std::cerr << "Error: " << e.what() << "\n";
-	}
+
 	return (0);
 }

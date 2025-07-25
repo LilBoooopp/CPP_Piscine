@@ -1,5 +1,13 @@
 #include "Form.hpp"
 
+const char* Form::GradeTooHighException::what() const throw() {
+	return "Form grade is too high";
+}
+
+const char* Form::GradeTooLowException::what() const throw() {
+	return "Form grade is too low";
+}
+
 Form::Form(const std::string& name, int sg, int eg)
 	: _name(name), _signed(false), _signGrade(sg), _execGrade(eg) {
 	//std::cout << "Form default constructor called." << std::endl;
@@ -28,16 +36,11 @@ Form::~Form(void) {
 	//std::cout << "Form destructor called." << std::endl;
 }
 
-const std::string& Form::getName() const {
-	return (_name);
-}
+const std::string& Form::getName() const { return (_name); }
 
-bool	Form::isSigned() const {
-	return (_signed);
-}
-
-int	Form::getSignGrade() const { return (_signGrade); }
-int Form::getExecGrade() const { return (_execGrade); }
+bool	Form::isSigned() const { return (_signed); }
+int		Form::getSignGrade() const { return (_signGrade); }
+int 	Form::getExecGrade() const { return (_execGrade); }
 
 void Form::beSigned(const Bureaucrat& b) {
 	if (b.getGrade() > _signGrade)

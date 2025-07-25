@@ -10,7 +10,7 @@ class Bureaucrat;
 
 class Form {
 	private:
-		const std::string&	_name;
+		const std::string	_name;
 		bool				_signed;
 		const int			_signGrade;
 		const int			_execGrade;
@@ -18,17 +18,13 @@ class Form {
 	public:
 		class GradeTooHighException : public std::exception {
 			public:
-				virtual const char* what() const throw() {
-					return "From grade too high";
-				}
+				virtual const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception {
 			public:
-				virtual const char* what() const throw() {
-					return "Form grade too low";
-				}
+				virtual const char* what() const throw();
 		};
-		Form(const std::string&name, int signGrade, int execGrade);
+		Form(const std::string& name, int signGrade, int execGrade);
 		Form(const Form &other);
 		Form &operator=(const Form &other);
 		~Form(void);

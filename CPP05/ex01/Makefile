@@ -1,4 +1,4 @@
-	CC = c++
+CC = c++
 FLAGS = -Werror -Wextra -Wall -std=c++98
 NAME = Bureaucrat
 
