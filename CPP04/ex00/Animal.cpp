@@ -6,25 +6,25 @@
 /*   By: cbopp <cbopp@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 05:07:20 by cbopp             #+#    #+#             */
-/*   Updated: 2025/05/07 15:18:24 by cbopp            ###   ########.fr       */
+/*   Updated: 2025/08/19 14:16:43 by cbopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal(void) : type("Default Animal") {
+Animal::Animal(void) : _type("Default Animal") {
 	std::cout << "Animal default constructor called" << std::endl;
 }
 
-Animal::Animal(std::string type) : type(type) {
-	std::cout << "Animal of type " << this->type << " was constructed." << std::endl;
+Animal::Animal(std::string type) : _type(type) {
+	std::cout << "Animal of type " << this->_type << " was constructed." << std::endl;
 }
 
 Animal::~Animal(void) {
-	std::cout << "Animal of type " << type << " was destroyed." << std::endl;
+	std::cout << "Animal of type " << _type << " was destroyed." << std::endl;
 }
 
-Animal::Animal(const Animal &other) : type(other.type) {
+Animal::Animal(const Animal &other) : _type(other._type) {
 	std::cout << "Animal copied." << std::endl;
 	*this = other;
 }
@@ -32,12 +32,12 @@ Animal::Animal(const Animal &other) : type(other.type) {
 Animal& Animal::operator=(const Animal &other) {
 	std::cout << "Animal assignment operator called" << std::endl;
 	if (this != &other)
-		this->type = other.type;
+		this->_type = other._type;
 	return (*this);
 }
 
 std::string	Animal::getType() const {
-	return (this->type);
+	return (this->_type);
 }
 
 void	Animal::makeSound() const {

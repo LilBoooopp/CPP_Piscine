@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+ /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
@@ -21,15 +21,15 @@ int	main() {
 	std::cout << "--- EXERCISE 01: TESTING DEEP COPY AND BRAIN ---" << std::endl;
 
 	// Provided main
-	const Animal* j_animal = new Dog(); // j_animal is a more descriptive name
-	const Animal* i_animal = new Cat(); // i_animal is a more descriptive name
+	const Animal* j_animal = new Dog();
+	const Animal* i_animal = new Cat();
 
 	std::cout << "\nDeleting j_animal (Dog) and i_animal (Cat):" << std::endl;
-	delete j_animal; // Should call Dog destructor, which deletes its Brain
-	delete i_animal; // Should call Cat destructor, which deletes its Brain
+	delete j_animal;
+	delete i_animal;
 
 	std::cout << "\n--- TESTING ARRAY OF ANIMALS ---" << std::endl;
-	const int num_animals = 4; // As per "Half of it will be Dog objects and the other half will be Cat objects"
+	const int num_animals = 4;
 	Animal* animals[num_animals];
 
 	std::cout << "\nCreating Dogs and Cats for the array:" << std::endl;

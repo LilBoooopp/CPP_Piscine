@@ -6,7 +6,7 @@
 /*   By: cbopp <cbopp@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 03:38:58 by cbopp             #+#    #+#             */
-/*   Updated: 2025/05/07 15:15:45 by cbopp            ###   ########.fr       */
+/*   Updated: 2025/08/19 14:16:22 by cbopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Animal {
 	protected:
-		std::string	type;
+		std::string	_type;
 	
 	public:
 		Animal(void);

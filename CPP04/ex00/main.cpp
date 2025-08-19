@@ -6,7 +6,7 @@
 /*   By: cbopp <cbopp@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 17:03:52 by cbopp             #+#    #+#             */
-/*   Updated: 2025/07/03 19:21:05 by cbopp            ###   ########.fr       */
+/*   Updated: 2025/08/19 14:24:30 by cbopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int main() {
 
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); // will output the cat sound!
-    j->makeSound(); // will output the dog sound
+    i->makeSound();
+    j->makeSound();
     meta->makeSound();
 
     delete meta;
