@@ -31,7 +31,10 @@ Intern::~Intern(void) {
 }
 
 AForm* Intern::makeForm(const std::string& name, const std::string& target) const {
-	struct Mapping { const char* name; AForm*(*fn)(const std::string&);};
+	struct Mapping {
+		const char* name;
+		AForm*(*fn)(const std::string&);
+	};
 	static Mapping map[] = {
 		{ "shrubbery creation", createShrub },
 		{ "robotomy request", createRobot },
@@ -40,9 +43,9 @@ AForm* Intern::makeForm(const std::string& name, const std::string& target) cons
 	for (size_t i = 0; i < sizeof(map)/sizeof(map[0]); ++i) {
 		if (name == map[i].name) {
 			std::cout << "Intern creates " << name << std::endl;
-			return map[i].fn(target);
+			return (map[i].fn(target));
 		}
 	}
 	std::cout << "Intern couldn't find form named \"" << name << "\"" << std::endl;
-	return NULL;
+	return (NULL);
 }
