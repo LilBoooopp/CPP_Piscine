@@ -5,6 +5,9 @@
 
 template <class T>
 class Array {
+private:
+	T*				_data;
+	unsigned int	_n;
 public:
 	Array();
 	explicit Array(unsigned int n);
@@ -19,10 +22,6 @@ public:
 	unsigned int size() const;
 
 	void swap(Array& other);
-
-private:
-	T*				_data;
-	unsigned int	_n;
 };
 
 #include "Array.tpp"

@@ -10,7 +10,7 @@ void	iter(T* a, std::size_t n, void (*f)(T&))
 }
 
 template <class T>
-void	iter(T* a, std::size_t n, const void (*f)(const T&))
+void	iter(T* a, std::size_t n, void (*f)(const T&))
 {
 	if (!a) return ;
 	for (std::size_t i = 0; i < n; ++i) f(a[i]);

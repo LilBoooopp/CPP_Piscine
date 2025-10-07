@@ -55,7 +55,7 @@ int main(void)
 	std::cout << "]\n" << std::endl;
 
 	// std::string (non-const) with mutating (read-only functions)
-	std::string ss[] = {"Mathys", "Marusya", "Charlie"};
+	std::string ss[] = {"Bocal", "Vincent", "Charlie"};
 	std::size_t ns = sizeof(ss) / sizeof(ss[0]);
 
 	show_array(ss, ns, "string before:");
