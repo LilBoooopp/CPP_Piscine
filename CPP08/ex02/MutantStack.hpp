@@ -15,10 +15,10 @@ public:
 	}
 	~MutantStack(void) {}
 	
-	typedef class Container::iterator				iterator;
-	typedef class Container::const_iterator			const_iterator;
-	typedef class Container::reverse_iterator		reverse_iterator;
-	typedef class Container::const_reverse_iterator	const_reverse_iterator;
+	typedef typename Container::iterator				iterator;
+	typedef typename Container::const_iterator			const_iterator;
+	typedef typename Container::reverse_iterator		reverse_iterator;
+	typedef typename Container::const_reverse_iterator	const_reverse_iterator;
 
 	iterator begin() { return (this->c.begin()); }
 	iterator end() { return (this->c.end()); }
