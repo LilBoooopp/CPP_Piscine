@@ -37,5 +37,38 @@ int	main()
 		std::cout << "caught: " << e.what() << std::endl;
 	}
 
+	std::cout << "addRange with list (duplicates allowed)" << std::endl;
+	{
+		std::list<int> L;
+		L.push_back(7);
+		L.push_back(3);
+		L.push_back(7);
+		L.push_back(12);
+
+		Span s(static_cast<unsigned int>(L.size()));
+		s.addRange(L.begin(), L.end());
+		std::cout << "shortest = " << s.shortestSpan() << " (expecting 0 due to duplicates)" << std::endl;
+		std::cout << "longest = " << s.longestSpan() << " (expect 12-3 = 9)" << std::endl;
+	}
+
+	std::cout << "large test" << std::endl;
+	{
+		const unsigned int N = 10000U;
+		Span s(N);
+
+		std::vector<int> mass;
+		mass.reserve(N);
+		std::srand(static_cast<unsigned int>(std::time(0)));
+		for (unsigned int i = 0; i < N; ++i) {
+			mass.push_back(std::rand() % 100000);
+		}
+
+		s.addRange(mass.begin(), mass.end());
+		std::cout	<< "size = " << s.size()
+					<< ", shortest = " << s.shortestSpan()
+					<< ", longest = " << s.longestSpan()
+					<< std::endl;
+	}
+
 	return (0);
 }

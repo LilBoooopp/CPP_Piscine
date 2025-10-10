@@ -19,6 +19,15 @@ class Span {
 
 		void	addNumber(int value);
 
+		template <class InputIt>
+		void	addRange(InputIt first, InputIt last) {
+			std::size_t count = std::distance(first, last);
+			if (_data.size() + count > _capacity) {
+				throw FullException();
+			}
+			_data.insert(_data.end(), first, last);
+		}
+
 		unsigned int shortestSpan() const;
 		unsigned int longestSpan() const;
 
