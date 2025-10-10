@@ -4,32 +4,32 @@
 #include <deque>
 #include "easyfind.hpp"
 
-template <class C>
-void	try_find(C& c, int x, const char* name)
-{
-	std::cout << "Searching for " << x << " in " << name << ": ";
-	try {
-		typename C::const_iterator it = easyfind(static_cast<const C&>(c), x);
-		std::cout << "found value " << *it << std::endl;
-	} catch (const std::exception& e) {
-		std::cout << "not found (" << e.what() << ")" << std::endl;
-	}
-}
-
 int	main(void)
 {
 	std::vector<int> v;
 	for (int i = 0; i < 5; ++i) v.push_back(i * 10);
-	try_find(v, 20, "vector");
-	try_find(v, 99, "vector");
+	try
+	{
+		easyfind(v, 20);
+		easyfind(v, 99);
+	} catch (const std::exception& e)
+	{
+		std::cout << "vector: " << e.what() << std::endl;
+	}
 
 	std::list<int> L;
 	L.push_back(-3);
 	L.push_back(-1);
 	L.push_back(2);
 	L.push_back(4);
-	try_find(L, -1, "list");
-	try_find(L, 5, "list");
+	try
+	{
+		easyfind(L, -1);
+		easyfind(L, 5);
+	} catch (const std::exception& e)
+	{
+		std::cout << "vector: " << e.what() << std::endl;
+	}
 
 	std::deque<int> d;
 	d.push_back(7);
