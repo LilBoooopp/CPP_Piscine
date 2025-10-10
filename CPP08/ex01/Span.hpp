@@ -19,22 +19,6 @@ class Span {
 
 		void	addNumber(int value);
 
-		template <class InputIt>
-		void	addRange(InputIt first, InputIt last) {
-			typedef typename std::iterator_traits<InputIt>::difference_type diff_t;
-			diff_t	diff = std::distance(first, last);
-			if (diff < 0) diff = 0;
-
-			const std::size_t count = static_cast<std::size_t>(diff);
-			const std::size_t curr = _data.size();
-			const std::size_t cap = static_cast<std::size_t>(_capacity);
-
-			if (curr + count > cap)
-				throw FullException();
-			
-			_data.insert(_data.end(), first, last);
-		}
-
 		unsigned int shortestSpan() const;
 		unsigned int longestSpan() const;
 

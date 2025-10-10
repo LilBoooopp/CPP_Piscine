@@ -21,7 +21,7 @@ Span::~Span(void) {}
 
 void	Span::addNumber(int value)
 {
-	if (_data.size() >= static_cast<std::size_t>(_capacity))
+	if (_data.size() >= _capacity)
 		throw FullException();
 	_data.push_back(value);
 }
