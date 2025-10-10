@@ -8,6 +8,7 @@ public:
 	static void convert(const std::string& literal);
 private:
 	ScalarConverter(void);
+	ScalarConverter(const ScalarConverter&);
 	ScalarConverter &operator=(const ScalarConverter &other);
 	~ScalarConverter(void);
 };
