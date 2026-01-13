@@ -1,8 +1,8 @@
 CC = c++
 FLAGS = -Werror -Wextra -Wall -std=c++98
-NAME = btc
+NAME = rpn
 
-SRCS = BitcoinExchange.cpp main.cpp
+SRCS = main.cpp rpn.cpp
 
 all: $(NAME)
 
