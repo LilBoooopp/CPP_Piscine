@@ -273,12 +273,12 @@ void pmergeme::run(int argc, char **argv) {
   clock_t start_vec = clock();
   sortVector(_vec);
   clock_t end_vec = clock();
-  double time_vec = double(end_vec - start_vec) / CLOCKS_PER_SEC * 1000000;
+  double time_vec = double(end_vec - start_vec) / CLOCKS_PER_SEC;
 
   clock_t start_deq = clock();
   sortDeque(_deq);
   clock_t end_deq = clock();
-  double time_deq = double(end_deq - start_deq) / CLOCKS_PER_SEC * 1000000;
+  double time_deq = double(end_deq - start_deq) / CLOCKS_PER_SEC;
 
   std::cout << "After: ";
   for (size_t i = 0; i < _vec.size(); ++i) {
