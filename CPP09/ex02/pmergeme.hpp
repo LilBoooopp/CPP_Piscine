@@ -10,6 +10,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#define DEBUG 0
 
 class pmergeme {
 private:

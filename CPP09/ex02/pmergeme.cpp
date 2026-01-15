@@ -45,12 +45,12 @@ int pmergeme::binarySearchVector(const std::vector<int> &arr, int target,
 }
 
 void pmergeme::sortVector(std::vector<int> &arr) {
-
-  //std::cout << "\n[Recursion Depth Input]: ";
-  //for (size_t i = 0; i < arr.size(); ++i)
-  //  std::cout << arr[i] << " ";
-  //std::cout << std::endl;
-
+  if (DEBUG == 1) {
+    std::cout << "\n[Recursion Depth Input]: ";
+    for (size_t i = 0; i < arr.size(); ++i)
+    std::cout << arr[i] << " ";
+    std::cout << std::endl;
+  }
   if (arr.size() <= 1)
     return;
 
@@ -59,7 +59,8 @@ void pmergeme::sortVector(std::vector<int> &arr) {
   if (hasStraggler) {
     straggler = arr.back();
     arr.pop_back();
-    //std::cout << " -> Straggler detected: " << straggler << std::endl;
+    if (DEBUG == 1) 
+      std::cout << " -> Straggler detected: " << straggler << std::endl;
   }
 
   std::vector<std::pair<int, int> > pairs;
@@ -70,27 +71,33 @@ void pmergeme::sortVector(std::vector<int> &arr) {
       pairs.push_back(std::make_pair(arr[i + 1], arr[i]));
   }
 
-  //std::cout << " -> Pairs created (a > b) : ";
-  //for (size_t i = 0; i < pairs.size(); ++i)
-  //  std::cout << "[" << pairs[i].first << "," << pairs[i].second << "] ";
-  //std::cout << std::endl;
+  if (DEBUG == 1) {
+    std::cout << " -> Pairs created (a > b) : ";
+    for (size_t i = 0; i < pairs.size(); ++i)
+    std::cout << "[" << pairs[i].first << "," << pairs[i].second << "] ";
+    std::cout << std::endl;
+  }
 
   std::vector<int> mainChain;
   for (size_t i = 0; i < pairs.size(); ++i) {
     mainChain.push_back(pairs[i].first);
   }
 
-  //std::cout << " -> Recursive sortin Main chain (a's): ";
-  //for (size_t i = 0; i < mainChain.size(); ++i)
-  //  std::cout << mainChain[i] << " ";
-  //std::cout << std::endl;
+  if (DEBUG == 1) {
+  std::cout << " -> Recursive sortin Main chain (a's): ";
+  for (size_t i = 0; i < mainChain.size(); ++i)
+   std::cout << mainChain[i] << " ";
+  std::cout << std::endl;
+  }
 
   sortVector(mainChain);
 
-  //std::cout << " <- Returned from recursion. Sorted Main chain is now: ";
-  //for (size_t i = 0; i < mainChain.size(); ++i)
-  //  std::cout << mainChain[i] << " ";
-  //std::cout << std::endl;
+  if (DEBUG == 1) {
+    std::cout << " <- Returned from recursion. Sorted Main chain is now: ";
+    for (size_t i = 0; i < mainChain.size(); ++i)
+    std::cout << mainChain[i] << " ";
+    std::cout << std::endl;
+  }
 
   std::vector<int> result = mainChain;
   std::vector<int> pendingB;
@@ -105,10 +112,12 @@ void pmergeme::sortVector(std::vector<int> &arr) {
     }
   }
 
-  //std::cout << " -> Pending 'b' elements (matched to srted 'a's): ";
-  //for (size_t i = 0; i < pendingB.size(); ++i)
-  //  std::cout << pendingB[i] << " ";
-  //std::cout << std::endl;
+  if (DEBUG == 1) {
+    std::cout << " -> Pending 'b' elements (matched to srted 'a's): ";
+    for (size_t i = 0; i < pendingB.size(); ++i)
+    std::cout << pendingB[i] << " ";
+    std::cout << std::endl;
+  }
 
   result.insert(result.begin(), pendingB[0]);
 
@@ -134,17 +143,20 @@ void pmergeme::sortVector(std::vector<int> &arr) {
   }
 
   if (hasStraggler) {
-    //std::cout << " -> Inserting Straggler: " << straggler << std::endl;
+    if (DEBUG == 1) 
+      std::cout << " -> Inserting Straggler: " << straggler << std::endl;
     int pos = binarySearchVector(result, straggler, result.size() - 1);
     result.insert(result.begin() + pos, straggler);
   }
 
   arr = result;
 
-  //std::cout << "[End of Recursion Level]\nFinal Sorted: ";
-  //for (size_t i = 0; i < arr.size(); ++i)
-  //  std::cout << arr[i] << " ";
-  //std::cout << std::endl;
+  if (DEBUG == 1) {
+    std::cout << "[End of Recursion Level]\nFinal Sorted: ";
+    for (size_t i = 0; i < arr.size(); ++i)
+    std::cout << arr[i] << " ";
+    std::cout << std::endl;
+  }
 }
 
 int pmergeme::binarySearchDeque(const std::deque<int>& arr, int target, int limit) {

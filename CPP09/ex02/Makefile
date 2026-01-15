@@ -1,6 +1,6 @@
 CC = c++
 FLAGS = -std=c++98 -Werror -Wextra -Wall 
-NAME = PmergeME
+NAME = PmergeMe
 
 SRCS = main.cpp pmergeme.cpp
 
